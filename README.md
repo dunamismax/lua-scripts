@@ -1,1 +1,339 @@
-# lua-scripts
+<p align="center">
+  <img src="lua.jpg" alt="Lua Scripts" width="500" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/sawyer/lua-scripts">
+    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=24&pause=1000&color=000080&center=true&vCenter=true&width=800&lines=Lua+Scripts+Monorepo;Complete+Scripting+Development+Stack;CLI+%2B+TUI+%2B+Networking+%2B+Automation;From+System+Tools+to+Web+Services;Pure+Lua%2C+Maximum+Productivity." alt="Typing SVG" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://luajit.org/"><img src="https://img.shields.io/badge/LuaJIT-2.1+-000080.svg?logo=lua" alt="LuaJIT Version"></a>
+  <a href="https://github.com/mpeterv/argparse"><img src="https://img.shields.io/badge/argparse-0.7-blue.svg" alt="argparse"></a>
+  <a href="https://github.com/tboox/ltui"><img src="https://img.shields.io/badge/LTUI-2.7-green.svg" alt="LTUI"></a>
+  <a href="https://lunarmodules.github.io/luafilesystem/"><img src="https://img.shields.io/badge/LuaFileSystem-1.8-orange.svg" alt="LFS"></a>
+  <a href="https://lunarmodules.github.io/luasocket/"><img src="https://img.shields.io/badge/LuaSocket-3.1-red.svg" alt="LuaSocket"></a>
+  <a href="https://img.shields.io/github/license/sawyer/lua-scripts"><img src="https://img.shields.io/github/license/sawyer/lua-scripts" alt="License"></a>
+  <a href="https://github.com/sawyer/lua-scripts/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="https://github.com/sawyer/lua-scripts/stargazers"><img src="https://img.shields.io/github/stars/sawyer/lua-scripts" alt="GitHub Stars"></a>
+</p>
+
+---
+
+## About This Project
+
+A comprehensive, production-ready monorepo for modern scripting and automation using the complete Lua ecosystem. This repository demonstrates professional development workflows across CLI tools, terminal interfaces, networking applications, and system automation scripts.
+
+**Key Features:**
+
+- **Complete Tech Stack Coverage** - LuaJIT, argparse, LTUI, LuaFileSystem, LuaSocket, and more
+- **Production-Grade Structure** - Shared libraries, utilities, and organized project templates
+- **Working Demo Applications** - Fully functional examples for each application type
+- **Developer-Friendly Tools** - Scripts for creating, building, and running applications
+- **Comprehensive Documentation** - Guides, best practices, and API references
+- **Cross-Platform Ready** - Support for Linux, macOS, Windows, and containerized environments
+
+---
+
+## Use This Template
+
+This repository serves as a GitHub template, providing developers with a robust foundation for building Lua-based scripts, CLI tools, and automation systems. Rather than cloning, you can create your own repository instance with all essential infrastructure and demo applications pre-configured.
+
+**To get started:**
+
+1. Click the green **"Use this template"** button at the top right of this repository
+2. Choose "Create a new repository"
+3. Name your repository and set it to public or private
+4. Click "Create repository from template"
+
+This will create a new repository in your GitHub account with all the code, structure, and configuration files needed to start building applications immediately using the complete Lua scripting stack.
+
+**Advantages of using the template:**
+
+- Establishes a clean git history beginning with your initial commit
+- Configures your repository as the primary origin (not a fork)
+- Enables complete customization of repository name and description
+- Provides full ownership and administrative control of the codebase
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- **[LuaJIT](https://luajit.org/)** - High-performance Lua interpreter
+- **[LuaRocks](https://luarocks.org/)** - Lua package manager (recommended)
+- **System Dependencies** - curl, git, make
+
+### Quick Setup
+
+```bash
+# 1. Clone and enter the repository
+git clone https://github.com/sawyer/lua-scripts.git
+cd lua-scripts
+
+# 2. Install dependencies
+luajit install.lua
+
+# 3. Test installation
+luajit examples/hello.lua
+
+# 4. Try the applications
+luajit apps/cli/file-manager.lua list .
+luajit apps/cli/system-info.lua --cpu --memory
+luajit apps/cli/json-processor.lua query data.json "users.0.name"
+```
+
+---
+
+## Architecture
+
+### Project Structure
+
+```
+lua-scripts/
+├── apps/                 # Complete applications
+│   ├── cli/             # Command-line tools (file-manager, system-info, json-processor, network-tools)
+│   ├── tui/             # Terminal UI apps (task-manager with LTUI concepts)
+│   └── scripts/         # Utility scripts (directory-sync, log-analyzer)
+├── libs/                # Libraries and modules
+│   ├── shared/          # Custom shared libraries (utils, logger, config)
+│   └── external/        # External dependencies (json.lua, lume.lua)
+├── examples/            # Working demonstrations and tutorials
+├── docs/                # Comprehensive documentation
+├── tools/               # Development and build automation
+└── Makefile             # Build automation and shortcuts
+```
+
+---
+
+<details>
+<summary><strong>Click to expand: Technology Stack Details</strong></summary>
+
+This monorepo encompasses the complete Lua scripting ecosystem, providing developers with a unified development environment for building professional command-line tools, system utilities, and automation scripts.
+
+### **Core Runtime: High-Performance Foundation**
+
+The foundation for all scripting applications, optimized for speed and compatibility.
+
+- [**LuaJIT**](https://luajit.org/)
+  - **Role:** High-Performance Lua Interpreter
+  - **Description:** A Just-In-Time (JIT) compiler and high-performance interpreter for the Lua language. LuaJIT significantly boosts execution speed, making it ideal for demanding scripts, real-time processing, and system automation tasks.
+
+### **CLI Development: Professional Command-Line Tools**
+
+Modern command-line interface development with robust argument parsing and user-friendly interfaces.
+
+- [**argparse**](https://github.com/mpeterv/argparse)
+  - **Role:** Command-Line Argument Parser
+  - **Description:** Feature-rich command-line parser inspired by Python's argparse. Supports positional arguments, options, flags, sub-commands, and automatic help generation for professional CLI tools.
+- [**lua_cliargs**](https://github.com/amireh/lua_cliargs)
+  - **Role:** Alternative CLI Parser
+  - **Description:** Lightweight and fast argument parser with support for required, optional, and flag arguments. Ideal for simple to medium complexity command-line applications.
+
+### **TUI Development: Interactive Terminal Interfaces**
+
+Rich text-based user interfaces for complex interactive applications.
+
+- [**LTUI**](https://github.com/tboox/ltui)
+  - **Role:** Terminal User Interface Framework
+  - **Description:** Cross-platform terminal UI library for creating sophisticated text-based interfaces. Provides windows, buttons, dialogs, menus, and text areas for building professional terminal applications.
+
+### **File System Operations: Powerful File Management**
+
+Comprehensive file system operations beyond Lua's standard library.
+
+- [**LuaFileSystem (LFS)**](https://lunarmodules.github.io/luafilesystem/)
+  - **Role:** File System Operations Library
+  - **Description:** Portable file system access for directory traversal, file attributes, permissions, and advanced file operations. Essential for system administration scripts and file management tools.
+
+### **Networking: Complete Network Programming**
+
+Full-featured networking capabilities for web services, APIs, and network tools.
+
+- [**LuaSocket**](https://lunarmodules.github.io/luasocket/)
+  - **Role:** Network Programming Library
+  - **Description:** Comprehensive networking library providing TCP/UDP sockets, HTTP client, SMTP, FTP, and DNS operations. Foundation for web services, API clients, and network monitoring tools.
+
+### **Data Processing: Modern Data Handling**
+
+Efficient data processing and manipulation for modern applications.
+
+- [**json.lua**](https://github.com/rxi/json.lua)
+  - **Role:** JSON Processing Library
+  - **Description:** Fast, lightweight JSON encoder/decoder in pure Lua. Perfect for configuration files, API communication, and data interchange.
+- [**lume**](https://github.com/rxi/lume)
+  - **Role:** Utility Functions Library
+  - **Description:** Collection of essential helper functions for math, table manipulation, functional programming, and common scripting tasks.
+
+### **Shared Infrastructure: Production-Ready Components**
+
+Professional-grade shared libraries for common development patterns.
+
+- **Configuration Management:** JSON-based configuration with user directories and defaults
+- **Logging System:** Multi-level colored logging with file output and formatting
+- **Utility Functions:** Math helpers, string processing, file operations, and more
+
+</details>
+
+---
+
+## Demo Applications
+
+This monorepo includes multiple fully functional demo applications showcasing each technology:
+
+### 🗂️ **File Manager CLI** (argparse + LFS)
+
+Professional file management tool with list, copy, move, delete, and search operations. Features progress reporting, recursive operations, and human-readable output.
+
+### 📊 **System Monitor** (CLI + JSON)
+
+Real-time system information tool displaying CPU, memory, disk, and network statistics with JSON export capability and watch mode.
+
+### 📝 **JSON Processor** (json.lua)
+
+Advanced JSON manipulation tool supporting query, merge, validate, filter, and transformation operations with JSONPath-like syntax.
+
+### 🌐 **Network Tools** (LuaSocket)
+
+Comprehensive networking utilities including ping, port scanning, HTTP requests, DNS lookup, traceroute, and simple servers.
+
+### ✅ **Task Manager TUI** (LTUI concepts)
+
+Interactive terminal-based task management system with keyboard navigation, status tracking, and persistent storage.
+
+### 🔄 **Directory Sync** (LFS + automation)
+
+Intelligent file synchronization with hash comparison, differential updates, and dry-run capabilities for backup and deployment.
+
+### 📋 **Log Analyzer** (parsing + analysis)
+
+Multi-format log parsing and analysis tool supporting Apache, Nginx, and custom formats with statistics generation and real-time monitoring.
+
+---
+
+## Development
+
+### Creating New Applications
+
+```bash
+# Use convenient Make targets
+make new-cli     # Create new CLI application
+make new-script  # Create new utility script
+
+# Use templates directly
+cp tools/templates/cli-template.lua apps/cli/my-tool.lua
+cp tools/templates/script-template.lua apps/scripts/my-script.lua
+```
+
+### Development Workflow
+
+```bash
+# Development setup with linting and formatting tools
+make dev-setup
+
+# Run all tests and examples
+make test
+
+# Format and lint code
+make format
+make lint
+
+# Check dependencies
+make check-deps
+```
+
+### Building and Distribution
+
+```bash
+# Create distribution package
+make package
+
+# Clean temporary files
+make clean
+
+# Run specific examples
+make run-examples
+```
+
+---
+
+## Shared Libraries Usage
+
+The monorepo provides battle-tested libraries for common scripting patterns:
+
+```lua
+-- Utility functions and data manipulation
+local utils = require('libs.shared.utils')
+local merged = utils.table_merge(table1, table2)
+local parts = utils.string_split("a,b,c", ",")
+
+-- Professional logging with levels and colors
+local logger = require('libs.shared.logger')
+logger.set_level("INFO")
+logger.info("Application started: %s", app_name)
+logger.error("Connection failed: %s", error_msg)
+
+-- Configuration management with JSON storage
+local config = require('libs.shared.config')
+local app_config = config.load(config.get_app_config_path("myapp"), {
+    timeout = 30,
+    debug = false
+})
+
+-- JSON processing and data interchange
+local json = require('libs.external.json')
+local data = json.decode(json_string)
+local formatted = json.encode(data)
+
+-- Functional programming utilities
+local lume = require('libs.external.lume')
+local doubled = lume.map({1,2,3}, function(x) return x * 2 end)
+local evens = lume.filter({1,2,3,4}, function(x) return x % 2 == 0 end)
+```
+
+---
+
+## Documentation
+
+- **[Getting Started Guide](docs/getting-started.md)** - Complete setup and first application tutorial
+- **[API Documentation](docs/api.md)** - Comprehensive library and function references
+- **[Best Practices](docs/best-practices.md)** - Professional development patterns and conventions
+- **[Contributing Guide](CONTRIBUTING.md)** - Development workflow and contribution guidelines
+
+---
+
+## Support This Project
+
+If you find this project valuable for your scripting and automation journey, consider supporting its continued development:
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/sawyer" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" />
+  </a>
+</p>
+
+---
+
+## Let's Connect
+
+<p align="center">
+  <a href="https://twitter.com/sawyer" target="_blank"><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
+  <a href="https://bsky.app/profile/sawyer.bsky.social" target="_blank"><img src="https://img.shields.io/badge/Bluesky-blue?style=for-the-badge&logo=bluesky&logoColor=white" alt="Bluesky"></a>
+  <a href="https://reddit.com/user/sawyer" target="_blank"><img src="https://img.shields.io/badge/Reddit-%23FF4500.svg?&style=for-the-badge&logo=reddit&logoColor=white" alt="Reddit"></a>
+  <a href="https://discord.com/users/sawyer" target="_blank"><img src="https://img.shields.io/badge/Discord-sawyer-7289DA.svg?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+</p>
+
+---
+
+## License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  <strong>Built with Lua</strong><br>
+  <sub>A comprehensive foundation for scripting and automation across all platforms</sub>
+</p>
