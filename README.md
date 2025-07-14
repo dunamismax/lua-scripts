@@ -111,69 +111,100 @@ lua-scripts/
 <details>
 <summary><strong>Click to expand: Technology Stack Details</strong></summary>
 
-This monorepo encompasses the complete Lua scripting ecosystem, providing developers with a unified development environment for building professional command-line tools, system utilities, and automation scripts.
+Below is a comprehensive, refined technology stack for scripting and command-line application development using the Lua programming language. This stack is designed as a complete toolkit for creating powerful and portable scripts, command-line interfaces (CLIs), and text-based user interfaces (TUIs). Lua is celebrated for its simplicity, performance, and ease of integration, making this stack ideal for a wide range of projects, from simple automation scripts to complex terminal applications.
 
-### **Core Runtime: High-Performance Foundation**
+### **Core Runtime: The Foundation of Your Scripts**
 
-The foundation for all scripting applications, optimized for speed and compatibility.
+The high-performance core remains the essential starting point for fast and efficient script execution.
 
-- [**LuaJIT**](https://luajit.org/)
+- [**LuaJIT**](https://luajit.org/luajit.html)
   - **Role:** High-Performance Lua Interpreter
-  - **Description:** A Just-In-Time (JIT) compiler and high-performance interpreter for the Lua language. LuaJIT significantly boosts execution speed, making it ideal for demanding scripts, real-time processing, and system automation tasks.
+  - **Description:** A Just-In-Time (JIT) compiler and high-performance interpreter for the Lua language. It significantly boosts execution speed, which is critical for demanding scripts and applications. LuaJIT is the foundation of this stack, enabling the performance required for modern scripting.
 
-### **CLI Development: Professional Command-Line Tools**
+### **Interface Development: From Simple to Interactive**
 
-Modern command-line interface development with robust argument parsing and user-friendly interfaces.
+This section covers the spectrum of user interaction, from basic command-line arguments to rich, interactive terminal applications.
 
 - [**argparse**](https://github.com/mpeterv/argparse)
-  - **Role:** Command-Line Argument Parser
-  - **Description:** Feature-rich command-line parser inspired by Python's argparse. Supports positional arguments, options, flags, sub-commands, and automatic help generation for professional CLI tools.
-- [**lua_cliargs**](https://github.com/amireh/lua_cliargs)
-  - **Role:** Alternative CLI Parser
-  - **Description:** Lightweight and fast argument parser with support for required, optional, and flag arguments. Ideal for simple to medium complexity command-line applications.
-
-### **TUI Development: Interactive Terminal Interfaces**
-
-Rich text-based user interfaces for complex interactive applications.
-
+  - **Role:** Feature-Rich Command-Line Parser
+  - **Description:** The go-to library for creating professional CLI tools. Inspired by Python's `argparse`, it supports positional arguments, options, and sub-commands while automatically generating help and usage messages.
 - [**LTUI**](https://github.com/tboox/ltui)
-  - **Role:** Terminal User Interface Framework
-  - **Description:** Cross-platform terminal UI library for creating sophisticated text-based interfaces. Provides windows, buttons, dialogs, menus, and text areas for building professional terminal applications.
+  - **Role:** Text-Based User Interface (TUI) Framework
+  - **Description:** A cross-platform library for building sophisticated text-based interfaces with components like windows, buttons, and dialogs. It allows you to create interactive and user-friendly terminal applications that go beyond simple command-line flags.
 
-### **File System Operations: Powerful File Management**
+### **Core Libraries: The Scripting Workhorse**
 
-Comprehensive file system operations beyond Lua's standard library.
+This expanded section provides a powerful set of libraries for handling the most common scripting tasks, from system interaction to data manipulation.
 
-- [**LuaFileSystem (LFS)**](https://lunarmodules.github.io/luafilesystem/)
-  - **Role:** File System Operations Library
-  - **Description:** Portable file system access for directory traversal, file attributes, permissions, and advanced file operations. Essential for system administration scripts and file management tools.
+### **System & File Operations**
 
-### **Networking: Complete Network Programming**
+- [**LuaFileSystem (LFS)**](https://keplerproject.github.io/luafilesystem/manual.html)
+  - **Role:** Portable Filesystem Operations
+  - **Description:** An indispensable library that provides a platform-independent way to work with directories, file attributes, and paths. LFS is essential for any script that needs to create, move, or query files and directories.
+- [**luaposix**](https://github.com/luaposix/luaposix)
+  - **Role:** Advanced System Interaction
+  - **Description:** A comprehensive binding to the POSIX API, unlocking the full power of the operating system for your scripts. It provides advanced features like process management, pipes, signals, and user/group manipulation, making it invaluable for system administration and automation.
 
-Full-featured networking capabilities for web services, APIs, and network tools.
+### **Data Handling & Serialization**
 
-- [**LuaSocket**](https://lunarmodules.github.io/luasocket/)
-  - **Role:** Network Programming Library
-  - **Description:** Comprehensive networking library providing TCP/UDP sockets, HTTP client, SMTP, FTP, and DNS operations. Foundation for web services, API clients, and network monitoring tools.
+- [**lua-cjson**](https://www.kyne.com.au/~mark/software/lua-cjson.php)
+  - **Role:** High-Performance JSON Library
+  - **Description:** A fast C-based library for encoding and decoding JSON. Its superior performance makes it the standard choice for scripts that interact heavily with web APIs or process large JSON datasets.
+- [**LuaExpat**](https://matthewwild.co.uk/projects/luaexpat/)
+  - **Role:** XML Parsing
+  - **Description:** A lightweight and efficient SAX-based XML parser built on the standard Expat library. It's ideal for scripts that need to process XML configuration files or data feeds without the overhead of a large DOM-based parser.
+- [**lyaml**](https://github.com/gvvaughan/lyaml)
+  - **Role:** YAML Processing
+  - **Description:** A fast YAML library that binds to the native `libyaml`. It allows for easy parsing and emission of YAML, a popular data format for configuration files in modern development and DevOps workflows.
 
-### **Data Processing: Modern Data Handling**
+### **Networking & Concurrency**
 
-Efficient data processing and manipulation for modern applications.
+- [**LuaSocket**](https://lunarmodules.github.io/luasocket/introduction.html)
+  - **Role:** Low-Level Networking Library
+  - **Description:** The foundational library for network programming in Lua, providing direct access to TCP and UDP protocols. It's the essential building block for any script that needs to make network connections.
+- [**lua-http**](https://daurnimator.github.io/lua-http/)
+  - **Role:** High-Level HTTP & WebSocket Library
+  - **Description:** A powerful, modern library for making HTTP requests. It simplifies interacting with web services and APIs by handling the complexities of HTTP/1.1, HTTP/2, and TLS (HTTPS), making it perfect for automation scripts.
+- [**Copas**](https://keplerproject.github.io/copas/)
+  - **Role:** Asynchronous Task Dispatcher
+  - **Description:** A library that simplifies creating concurrent, non-blocking network scripts using Lua coroutines. It's ideal for tasks that need to handle multiple network requests or connections simultaneously without the complexity of multithreading.
 
-- [**json.lua**](https://github.com/rxi/json.lua)
-  - **Role:** JSON Processing Library
-  - **Description:** Fast, lightweight JSON encoder/decoder in pure Lua. Perfect for configuration files, API communication, and data interchange.
+### **Text Processing**
+
+- [**LPeg**](http://www.inf.puc-rio.br/~roberto/lpeg/)
+  - **Role:** Pattern-Matching Library
+  - **Description:** A powerful and efficient library for pattern matching, created by Lua's lead architect. LPeg provides a formal and composable alternative to regular expressions, making it an exceptional tool for complex text parsing, log analysis, and implementing custom data formats.
+
+### **Utility & Helpers**
+
 - [**lume**](https://github.com/rxi/lume)
-  - **Role:** Utility Functions Library
-  - **Description:** Collection of essential helper functions for math, table manipulation, functional programming, and common scripting tasks.
+  - **Role:** General-Purpose Utility Library
+  - **Description:** A collection of essential, well-tested helper functions that extends Lua's standard library. Lume provides a lightweight, focused set of tools for common tasks involving math, table manipulation, and functional programming.
 
-### **Shared Infrastructure: Production-Ready Components**
+### **Development, Tooling, & Quality Assurance**
 
-Professional-grade shared libraries for common development patterns.
+A professional scripting workflow requires robust tools for managing dependencies, ensuring code quality, and distributing your work.
 
-- **Configuration Management:** JSON-based configuration with user directories and defaults
-- **Logging System:** Multi-level colored logging with file output and formatting
-- **Utility Functions:** Math helpers, string processing, file operations, and more
+### **Package Management**
+
+- [**LuaRocks**](https://luarocks.org/learn)
+  - **Role:** Package Manager
+  - **Description:** The premier package manager for the Lua ecosystem. LuaRocks allows you to easily find, install, and manage the libraries in this stack, streamlining project setup and dependency management.
+
+### **Code Quality**
+
+- [**luacheck**](https://github.com/mpeterv/luacheck)
+  - **Role:** Static Analyzer & Linter
+  - **Description:** A tool that analyzes your code to detect issues like unused variables and syntax errors before you run your script. Integrating a linter is a best practice for maintaining high-quality, bug-free code.
+- [**busted**](https://lunarmodules.github.io/busted/)
+  - **Role:** Unit Testing Framework
+  - **Description:** The most popular testing framework for Lua, enabling you to write and run automated tests for your script's logic. Adopting unit testing is critical for ensuring your scripts are correct and reliable.
+
+### **Build & Distribution**
+
+- [**luastatic**](https://github.com/ers35/luastatic)
+  - **Role:** Single-File Executable Builder
+  - **Description:** A tool to bundle a Lua script and all its dependencies (both Lua and C) into a single, standalone executable. This is essential for distributing your scripts and CLI tools to users who do not have a Lua interpreter or the required libraries installed.
 
 </details>
 
