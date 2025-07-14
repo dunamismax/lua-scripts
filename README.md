@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="lua.jpg" alt="Lua Scripts" width="500" />
+  <img src="lua-new.png" alt="Lua Image" width="500" />
 </p>
 
 <p align="center">
